@@ -16,7 +16,6 @@ ymean = data.loc[data['model']=='Y', 'price'].mean()
 zmean = data.loc[data['model']=='Z', 'price'].mean()
 yvals = [xmean, ymean, zmean]
 
-
 # x values - model names
 model_list = data.model.unique()
 model_list.sort()
