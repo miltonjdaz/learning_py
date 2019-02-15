@@ -15,4 +15,3 @@ def main():
 	print(average)
 
 main()
-input("Press the <Enter> key to quit.") 
