@@ -36,8 +36,8 @@ for i in range(0,55):
     print(key_i)
 
 for i in range(0,7):
-    key_i = 'final_spot_{}'.format(i)
-    p1_path[key_i]="p1_f{}".format(i) #f for final. f1 for final1
+    key_i = 'p1_final_spot_{}'.format(i)
+    p1_path[key_i]=None #f for final. f1 for final1
     print(key_i)
 print(p1_path)
 
