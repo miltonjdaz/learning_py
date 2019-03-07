@@ -19,7 +19,7 @@ for j in xrange(10):
 
 # TODO create paths for all players
 # while loop. While the counter is < 55, starting from 0, add up the index
-
+while: 
 
 # p2: 14 - 55 then 0 - 13 then p2final path
 # and so on for p3 and p4.
