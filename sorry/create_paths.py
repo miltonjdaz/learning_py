@@ -34,6 +34,9 @@ def main():
         # in each i for the outer for loop
         # spawn points append spawn_points[i-1]+14
         spawn_points=[0,14,28,42]
+        for i in spawn_points:
+            spawn_points.append(spawn_points[i-1]+14)
+            return spawn_points
         # there are 14 spots between each spawn point
         # p2: 14 - 55 then 0 - 13 then the last 6 spots for p2
         # and so on for p3 and p4.
