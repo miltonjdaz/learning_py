@@ -30,7 +30,6 @@ def main():
     for i in range(0,4):
         path={}
 
-
         # TODO you can add 14 and append to spawn_points 
         # in each i for the outer for loop
         # spawn points append spawn_points[i-1]+14
@@ -38,8 +37,6 @@ def main():
         # there are 14 spots between each spawn point
         # p2: 14 - 55 then 0 - 13 then the last 6 spots for p2
         # and so on for p3 and p4.
-
-
         # adding 55 to each value in spawn_points to get a ending point before the final 6 spots
         # ex: new_list = [x+1 for x in my_list]
         ending_points=[x+55 for x in spawn_points]
@@ -62,7 +59,7 @@ def main():
                 key_j='spot_{}'.format(j-ending_points[0])
                 path[key_j]=None
 
-        final_spots_range=range(0,7)
+        final_spots_range=range(0,6)
         for k in final_spots_range:
             key_k = 'p{0}_final_spot_{1}'.format(i+1,k)
             path[key_k]=None
