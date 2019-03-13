@@ -26,25 +26,23 @@ Assuming a player is facing up, the path follows this amount of steps.
     # 6 up
 """
 def main():
+
+    # there are 14 spots between each spawn point
+    # p2: 14 - 55 then 0 - 13 then the last 6 spots for p2
+    # and so on for p3 and p4.
+    spawn_points=[]
+    for i in range(0,4):
+        if i == 0:
+            spawn_points.append(0)
+        else:
+            spawn_points.append(spawn_points[i-1]+14)
+
+    ending_points=[x+55 for x in spawn_points]
+
     paths=[]
     for i in range(0,4):
         path={}
-
-        # TODO you can add 14 and append to spawn_points 
-        # in each i for the outer for loop
-        # spawn points append spawn_points[i-1]+14
-        spawn_points=[0,14,28,42]
-        for i in spawn_points:
-            spawn_points.append(spawn_points[i-1]+14)
-            return spawn_points
-        # there are 14 spots between each spawn point
-        # p2: 14 - 55 then 0 - 13 then the last 6 spots for p2
-        # and so on for p3 and p4.
-        # adding 55 to each value in spawn_points to get a ending point before the final 6 spots
-        # ex: new_list = [x+1 for x in my_list]
-        ending_points=[x+55 for x in spawn_points]
         custom_range=range(spawn_points[i],ending_points[i])
-
         for j in custom_range:
             if i == 0 or j < 55:
                 # player one needs no number manipulation
@@ -68,9 +66,3 @@ def main():
             path[key_k]=None
         paths.append(path)
     return paths
-
-
-        
-
-
-    
