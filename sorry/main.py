@@ -1,21 +1,18 @@
 import random
 import create_paths
+import movement
 
-
-
-# TODO roll dice until a player gets a 6, which sets turn order for the game
 dice_min=1
 dice_max=6
 
+starting_roller=random.randint(0, 3)
+
 # this function rolls a die until a player rolls a six. 
 # It returns that player as an integer between [0,3]
-def first_six():
-    # TODO randomize who gets the first turn instead of hard coding player_counter=0
-    player_counter=0
 
-    # first roll of the game.
+def first_six(starting_roller):
+    player_counter=starting_roller
     roll_result=random.randint(dice_min, dice_max)
-
     # if this roll is not 6, we roll until it is a 6 and keep track of the player rolling each time with player_counter
     while roll_result != 6:
         # uncomment following two lines to see every roll
@@ -26,8 +23,6 @@ def first_six():
             player_counter=0
         else:
             player_counter+=1
-    # here we print [1,4] based but all logic is [0,3] based
-    print("Player {0} rolled a {1} and has got first six".format(player_counter+1, roll_result))
     return player_counter
 
 # this method returns a list of player turn orders
@@ -43,26 +38,30 @@ def get_turn_order(counter):
     return player_list_ordered
 
 # storing the first player as an int 
-first_player=first_six()
-
+first_player=first_six(starting_roller) # first roller to get six
 # getting a list of the order of turns by player
 turn_order=get_turn_order(first_player)
-print(first_player)
-print(turn_order)
+print("")
+print("Because player {} rolled the first six, the order of turns will be: ".format(first_player+1))
+turn_order_1based=[x+1 for x in turn_order]
+print(turn_order_1based)
+
+# Roll dice until the first player spawns. 
+first_spawn=first_six(first_player)
+print("")
+print("Within this order of turns, the first one to roll a six and spawn, is player {}.".format(first_spawn+1))
 
 
-# TODO Roll dice until someone spawns. Then populate dict with spawn coin
-# call the first_six() method again but this time when the value is returned, populate that player's dictionary with a coin in their first key value.
+pathlist=create_paths.main() # four empty dicts the first time this is called
 
-# this returns 4 dictionaries for 4 player paths from another file
-p1 = ["c1", "c2", "c3", "c4"]
-p2 = ["c1", "c2", "c3", "c4"]
-p3 = ["c1", "c2", "c3", "c4"]
-p4 = ["c1", "c2", "c3", "c4"]
-pathlist=create_paths.main()
+pathlist=movement.main(pathlist,first_spawn,6)
+print("")
+print(pathlist[first_spawn])
+
+
+
 
 # ex: if first_six() returns 0 then pathlist[0] is the dictionary you want to populate their first spot with p1[0] in the value spot. Not the key.
-
 
 
 # TODO Roll dice until everyone spawns. 
