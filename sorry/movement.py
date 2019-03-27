@@ -94,9 +94,11 @@ while(p0_finished_coins_counter!=4 and p1_finished_coins_counter!=4 and p2_finis
 
             # TODO move furthest coin value into a new furthest_coin_key 
             # which is = to rolled+(previous)furthest coin key
-            # TODO we will do this by changing create_paths.py to have double digit 
-            # numbers at the end of each key no matter what. We will extract these numbers and simply add
-            # the amount rolled to it, while also checking for circling math (54 -> 0)
+            # TODO using this for loop: for k, v in first_path.items()
+            # we will check for when a key is equal to the furthest coin key
+            # if it is, we move start a counter and once the counter = amount rolled
+            # then we stick the value in this new, further long, key
+            
             # we also need to check for final spots when moving forward.
 
 
