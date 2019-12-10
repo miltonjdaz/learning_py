@@ -45,3 +45,51 @@ def main3():
     print("The month abbreviation is", months[n-1] + ".")
 
 main3() 
+
+# A program to convert a text message into a sequence of numbers using Unicode
+
+def main4(): 
+    # get the message to encode 
+    message = input("Please enter the message to encode: ")
+
+    print("\nHere are the Unicode codes:")
+
+    # loop through the message and print out the Unicode values 
+    for ch in message: 
+        print(ord(ch), end=" ")
+
+    print() # blank line before prompt 
+
+main4() 
+
+# A program to convert a sequence of Unicode numbers into a string of text. 
+
+def main5(): 
+    # get the message to encode 
+    inString = input("Please enter the Unicode-encoded message: ")
+
+    # loop through each substring and build Unicode message 
+    message = ""
+    for numStr in inString.split():
+        codeNum = int(numStr)               # convert digits to a number
+        message = message + chr(codeNum)    # concatentate character to message 
+    print("\nThe decoded message is:", message)
+
+main5()
+
+# Unicode numbers into a string of text using efficient version using a list accumulator. 
+
+def main6():
+    # get message to encode
+    inString = input("Please enter the Unicode-encoded message: ")
+
+    # loop through each substring and build Unicode message 
+    chars = [] 
+    for numStr in inString.split():
+        codeNum = int(numStr)           # convert digits to a number 
+        chars.append(chr(codeNum))      # accumulate new character
+
+    message = "".join(chars)
+    print("\nThe decoded message is:", message)
+
+main6() 
