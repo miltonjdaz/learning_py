@@ -93,3 +93,79 @@ def main6():
     print("\nThe decoded message is:", message)
 
 main6() 
+
+# Converts a date in form "mm/dd/yyyy" to "month day, year"
+
+def main7(): 
+    # get the date
+    dateStr = input("Enter a date (mm/dd/yyyy): ")
+
+    # split into components 
+    monthStr, dayStr, yearStr = dateStr.split("/")
+
+    # convert monthStr to the month name 
+    months = ["January", "February", "March", "April",
+              "May", "June", "July", "August", 
+              "September", "October", "November", "December"]
+    monthStr = months[int(monthStr)-1]
+
+    # output result in month day, year format 
+    print("The converted date is:", monthStr, dayStr+",", yearStr)
+
+main7()
+
+# A program to calculate the value of some change in dollars, this version represents the total cash in cents. 
+
+def change2(): 
+    print("Please enter the count of each coin type.")
+    quarters = int(input("Quarters: "))
+    dimes = int(input("Dimes: "))
+    nickels = int(input("Nickels: "))
+    pennies = int(input("Pennies: "))
+
+    total = quarters * 25 + dimes * 10 + nickels * 5 + pennies
+
+    print("The total value of your change is ${0}.{1:0>2}"
+          .format(total//100, total%100))
+
+change2()
+
+# Prints a file to the screen
+
+def main8():
+    fname = input("Enter filename: ")
+    infile = open(fname, "r")
+    data = infile.read()
+    print(data)
+
+main8()
+
+# Program to create a file of usernames in batch mode 
+
+def main9(): 
+    # get the file names 
+    infileName = input("What file are the names in? ")
+    outfileName = input("What file should the usernames go in? ")
+
+    # open the files 
+    infile = open(infileName, "r")
+    outfile = open(outfileName, "w")
+
+    # process each line of the input file 
+    for line in infile: 
+        # get the first and last names from line 
+        first, last = line.split()
+
+        # create the username
+        uname = (first[0]+last[:7]).lower()
+
+        # write it to the output fle 
+        print(uname, file=outfile)
+    
+    # close both files
+    infile.close()
+    outfile.close()
+
+    print("Usernames have been written to", outfileName)
+
+main9()
