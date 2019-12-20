@@ -169,14 +169,3 @@ def main9():
     print("Usernames have been written to", outfileName)
 
 main9()
-
-def calculate_era(runs, innings):
-    	era = (runs * 9)/innings
-	return era 
-def main():
-	n = int(input("How many pitchers: "))
-	for pitcher in range(n):
-		innings = int(input("How many innings: "))
-		runs = int(input("How many runs: "))
-		print (round(calculate_era(runs, innings), 2))
-main()
