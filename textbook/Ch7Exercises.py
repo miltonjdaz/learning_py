@@ -1,7 +1,7 @@
 # A program that determines people's pay at a company
 
 class Employee:
-	"""This class determines the regular pay of an employee"""
+	"""This class determines the regular pay of an employee of a company"""
     
 	def __init__(self, id, name, rate):
 		self.id = id 
@@ -24,11 +24,12 @@ class Employee:
 		return str(self.id) + " " + self.name 
 		
 class SalariedEmployee(Employee):
-	"""This super class determines the salaried pay of an employee"""
+	"""This super class determines the salaried pay of an employee of a company"""
 
 	def __init__(self, id, name, salary):
 		Employee.__init__(self, id, name, 0)
 		self.salary = salary
+	
 	# getter and setter for salary 
 	def setSalary(self, newSalary):
 		self.salary = newSalary
@@ -40,13 +41,13 @@ class SalariedEmployee(Employee):
 		return self.salary / 12.0
 		
 def main():
-	e123 = Employee(123, "Milton", 14)
-	e987 = Employee(987, "Claire", 17)
-	e234 = SalariedEmployee(234, "Rosalind", 240000)
-	e567 = SalariedEmployee(567, "Jason", 480000)
+	e123 = Employee(123, "Austin", 14)
+	e987 = Employee(987, "Haley", 17)
+	e234 = SalariedEmployee(234, "Milton", 240000)
+	e567 = SalariedEmployee(567, "Claire", 480000)
 	
 	print("==========================================")
-	print("The following are the highest and lowest pay:")
+	print("The following are the highest and lowest pay: ")
 	
 	elist = [e123, e987, e234, e567]
 	high = elist[0].pay()
@@ -62,14 +63,14 @@ def main():
 	print(low)
 	
 	print("==========================================")
-	print("The following are the names & id of the employees:")
+	print("The following are the names & id of the employees: ")
 	
 	elist.sort(key=Employee.getName)
 	for i in elist:
 		print(i)
 	
 	print("==========================================")
-	print("The following are the different pay for each employee:")
+	print("The following are the different pay for each employee: ")
 	
 	lookup = {123: e123, 987: e987, 234: e234, 567: e567}
 	for x in lookup:
