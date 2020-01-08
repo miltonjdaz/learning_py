@@ -20,7 +20,7 @@ def more():
         total = total + x 
         count = count + 1 
         moredata = input("Do you have more numbers (yes or no)? ")
-    print("\nThe average of the bumbers is", total / count)
+    print("\nThe average of the numbers is", total / count)
 
 more()
 
@@ -32,6 +32,45 @@ def neg():
         total = total + x 
         count = count + 1 
         x = float(input("Enter a number (negative to quit) >> "))
-    print("\nThe average of the bumbers is", total / count)
+    print("\nThe average of the numbers is", total / count)
 
-main() 
+neg() 
+
+def enter1(): 
+    total = 0.0
+    count = 0 
+    xStr = input("Enter a number (<Enter> to quit) >> ")
+    while xStr != "": 
+        x = float(xStr)
+        total = total + x 
+        count = count + 1 
+        x = input("Enter a number (<Enter> to quit) >> ")
+    print("\nThe average of the numbers is", total / count)
+
+enter1()
+
+def fn(): 
+    fileName = input("What file are the numbers in? ")
+    infile = open(fileName, 'r')
+    total = 0.0
+    count = 0 
+    for line in infile: 
+        total = total + float(line)
+        count = count + 1 
+    print("\nThe average of the numbers is", total / count)
+
+fn() 
+
+def mainsix():
+    fileName = input("What file are the numbers in? ")
+    infile = open(fileName, 'r')
+    total = 0.0
+    count = 0 
+    line = infile.readline()
+    while line != "":
+        total = total + float(line)
+        count = count + 1
+        line = infile.readline()
+    print("\nThe average of the numbers is", total / count)
+
+mainsix()
