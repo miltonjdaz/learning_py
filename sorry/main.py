@@ -11,13 +11,15 @@ starting_roller=random.randint(0, 3)
 # It returns that player as an integer between [0,3]
 
 def first_six(starting_roller):
-    player_counter=starting_roller
-    roll_result=random.randint(dice_min, dice_max)
+    player_counter = starting_roller
+    roll_result = random.randint(dice_min, dice_max)
+    
     # if this roll is not 6, we roll until it is a 6 and keep track of the player rolling each time with player_counter
+    
     while roll_result != 6:
         # uncomment following two lines to see every roll
-        # print("Player {0} rolls a {1}.".format(player_counter+1,roll_result))
-        # print("So next player rolls.")
+        print("Player {0} rolls a {1}.".format(player_counter+1,roll_result))
+        print("So next player rolls.")
         roll_result=random.randint(dice_min, dice_max)
         if player_counter > 2:
             player_counter=0
@@ -26,6 +28,7 @@ def first_six(starting_roller):
     return player_counter
 
 # this method returns a list of player turn orders
+
 def get_turn_order(counter):
     player_list_ordered=[]
     for i in range(0,4):
@@ -38,8 +41,11 @@ def get_turn_order(counter):
     return player_list_ordered
 
 # storing the first player as an int 
+
 first_player=first_six(starting_roller) # first roller to get six
+
 # getting a list of the order of turns by player
+
 turn_order=get_turn_order(first_player)
 print("")
 print("Because player {} rolled the first six, the order of turns will be: ".format(first_player+1))
@@ -47,6 +53,7 @@ turn_order_1based=[x+1 for x in turn_order]
 print(turn_order_1based)
 
 # Roll dice until the first player spawns. 
+
 first_spawn=first_six(first_player)
 print("")
 print("Within this order of turns, the first one to roll a six and spawn, is player {}.".format(first_spawn+1))
