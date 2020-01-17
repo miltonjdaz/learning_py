@@ -5,6 +5,7 @@ def main(four_paths,player,rolled):
     return(four_paths)
 
 # setting variables
+
 p0=["p0c0", "p0c1", "p0c2", "p0c3"]
 p1=["p1c0", "p1c1", "p1c2", "p1c3"]
 p2=["p2c0", "p2c1", "p2c2", "p2c3"]
@@ -36,6 +37,7 @@ coins_to_move=set_coins(player)
 
 
 # spawning the first player since they were the first to roll a six in main.py
+
 path_to_move_in=four_paths[player]
 first_spot=str(next(iter(path_to_move_in.keys())))
 path_to_move_in[first_spot]=coins_to_move[0]
@@ -51,8 +53,11 @@ def path_is_empty(path_to_move_in):
 
 # this function moves the furthest coin in a dictionary forward the amount passed into the first
 # parameter which is called, rolled.
+
 def move_forward(rolled, path_to_move_in):
+    
     # we check how many coins are on the board
+    
     coin_count=0
     coins_on_board=[]
     coin_to_move=""
@@ -67,6 +72,7 @@ def move_forward(rolled, path_to_move_in):
     # TODO Allow player to choose which coin to move. 
     # Currently assuming they want to move the furthest
     # which is = to rolled+(previous)furthest coin key
+    
     furthest_coin_key=coins_on_board[-1]
 
     for k, v in path_to_move_in.items():
@@ -94,9 +100,12 @@ def roll(player):
     return(roll_result)
 
 def spawn(path_to_move_in, coins_to_move):
+    
     # TODO Check if this spot is empty first, to see if an option to kill exists.
+    
     first_spot=str(next(iter(path_to_move_in.keys())))
     flag=0
+    
     for i in range(0,4):
         if coins_to_move[i]!=None and flag==0: # checks for very first coin that is not empty in coin list for player
             path_to_move_in[first_spot]=coins_to_move[i]
@@ -107,7 +116,9 @@ def spawn(path_to_move_in, coins_to_move):
 
 # we want to roll over and over again for each player and handle each player's roll result differently, depending on their board situation
 # while a player has not won
+
 loops_to_test=30
+
 while(p0_finished_coins_counter!=loops_to_test and p1_finished_coins_counter!=loops_to_test and p2_finished_coins_counter!=loops_to_test and p3_finished_coins_counter!=loops_to_test):
 
     # resetting the player, amount rolled, and coins to move at the beginning of every while loop
@@ -116,10 +127,14 @@ while(p0_finished_coins_counter!=loops_to_test and p1_finished_coins_counter!=lo
     coins_to_move=set_coins(player)
 
     if(rolled==6):
+        
         # if our player's path is completely empty, we want to just spawn in one coin
+        
         if(path_is_empty(path_to_move_in)==True):
             path_to_move_in, coins_to_move=spawn(path_to_move_in, coins_to_move)
+        
         # if player rolled a six and path is not empty
+        
         else:
             print("Congrats! Player {} has rolled a 6 and already has at least one coin on the board.".format(player))
             print("Would you like to spawn a new coin? If no, your furthest coin moves ahead.")
@@ -137,7 +152,9 @@ while(p0_finished_coins_counter!=loops_to_test and p1_finished_coins_counter!=lo
         # TODO if greater than 1, we let the player decided which one to move
         # TODO if greater than 1 and have option to kill, present options to console
     
+    
     # TODO once a player does not roll a 6, player ++ to move on to the next player
+    
     else: # if player did not roll a 6
         # if the board is empty, nothing happens here
         if(path_is_empty(path_to_move_in)==True):
@@ -152,6 +169,7 @@ while(p0_finished_coins_counter!=loops_to_test and p1_finished_coins_counter!=lo
             player+=1
             
     # TODO a temporary break to the loop
+    
     p0_finished_coins_counter+=1
 
 
