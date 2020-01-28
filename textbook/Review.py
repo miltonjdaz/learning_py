@@ -222,3 +222,11 @@ def main():
 		runs = int(input("How many runs: "))
 		print (round(calculate_era(runs, innings), 2))
 main()
+
+# A program that converts kilometers to miles
+
+def main ():
+	kilometers = eval(input("How many kilometers? ")) 
+	miles = kilometers * 0.62137  
+	print ("The kilometers converted to miles is", miles , "miles.")
+main()
