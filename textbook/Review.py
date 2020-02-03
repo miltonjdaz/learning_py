@@ -352,3 +352,43 @@ def main():
 	mycar = Car(make, model, year, mileage)
 	print(mycar)
 main()
+
+# This program finds the factorial
+
+from graphics import *
+
+def main():
+    win = GraphWin("Celsius Converter", 400, 300)
+    win.setCoords(0.0, 0.0, 3.0, 4.0)
+    
+    # Draw the interface
+    Text(Point(1,3), "   Input n:").draw(win)
+    Text(Point(1,1), "   n! is:").draw(win)
+    inputText = Entry(Point(2.25,3), 5)
+    inputText.setText("0")
+    inputText.draw(win)
+    outputText = Text(Point(2.25,1),"")
+    outputText.draw(win)
+    button = Text(Point(1.5,2.0),"Convert It")
+    button.draw(win)
+    Rectangle(Point(1,1.5), Point(2,2.5)).draw(win)
+
+    # wait for a mouse click
+    win.getMouse()
+
+    # convert input
+    n = int(inputText.getText())
+    product = 1
+    for i in (range(n,0,-1)):
+        product = product * i 
+        print(i)
+
+	# display output and change button
+    outputText.setText(product)
+    button.setText("Quit")
+
+    # wait for click and then quit
+    win.getMouse()
+    win.close()
+    
+main()
