@@ -708,3 +708,13 @@ def main ():
 	circ.draw (win)
 main()
 input("Press the <Enter> key to quit.")
+
+# A program that encodes a message.
+
+def main(): 
+  message = input("Enter the message to encode ")
+  key = int(input("Enter the amount of the shift "))
+  for ch in message:
+    message = chr(ord(ch) + key)
+    print (message, end = "")
+main()
