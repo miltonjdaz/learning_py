@@ -19,6 +19,6 @@ def sumNCubes(n):
 def main():
     n = int(input("Please enter a value for n: "))
     print("The sum of the first %d natural numbers is %d" % (n,sumN(n)))
-    print("The sum of the cubes of those numbers is %d" % (sumNCube(n)))
+    print("The sum of the cubes of those numbers is %d" % (sumNCubes(n)))
 
 main()
