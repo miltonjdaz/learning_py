@@ -12,7 +12,7 @@ def dollar(d, price):
 
 def main():
     diam = float(input("Enter the diameter of the pizza (in inches): "))
-    price = float(input("Enter the price of the pizza (in cents): "))
+    cost = float(input("Enter the price of the pizza (in cents): "))
     
     print("\nThe pizza costs %0.4f per square unit." % (dollar(diam,cost)))
 
