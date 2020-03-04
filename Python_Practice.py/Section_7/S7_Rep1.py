@@ -4,7 +4,7 @@
 
 def main(): 
     hours = float(input("How many hours did you work: "))
-    rate = float(input("How much do you get paid an hour: "))
+    wage = float(input("How much do you get paid an hour: "))
 
     if hours <= 40:
         pay = hours * wage
