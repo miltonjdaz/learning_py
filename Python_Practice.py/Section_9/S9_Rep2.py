@@ -1,4 +1,4 @@
-""" Section 9 Rep 2 """"
+""" Section 9 Rep 2 """
 
 # Racquetball program with shutouts 
 
