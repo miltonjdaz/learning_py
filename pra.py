@@ -15,4 +15,12 @@ tc = newobj.totalCount
 
 print(tc)
 
-import ipdb; ipdb.set_trace()
+# learning_py
+repos_obj2 = g.get_repo('miltonjdaz/learning_py')  
+
+newobj2 = repos_obj2.get_commits()
+
+tc2 = newobj2.totalCount
+
+print(tc2)
+# import ipdb; ipdb.set_trace()
