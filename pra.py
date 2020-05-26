@@ -23,4 +23,13 @@ newobj2 = repos_obj2.get_commits()
 tc2 = newobj2.totalCount
 
 print(tc2)
+
+# REST_API_project
+repos_obj3 = g.get_repo('miltonjdaz/REST_API_project')  
+
+newobj3 = repos_obj3.get_commits()
+
+tc3 = newobj3.totalCount
+
+print(tc3)
 # import ipdb; ipdb.set_trace()
