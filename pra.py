@@ -1,5 +1,7 @@
 from github import Github 
 import os
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Protecting the connection information  
 auth_token = os.environ.get('gh_token')
@@ -33,3 +35,14 @@ tc3 = newobj3.totalCount
 
 print(tc3)
 # import ipdb; ipdb.set_trace()
+
+objects = ('Runescape', 'learning_py', 'REST_API_project')
+y_pos = np.arange(len(objects))
+performance = [tc, tc2, tc3]
+
+plt.bar(y_pos, performance, align='center', alpha=0.5)
+plt.xticks(y_pos, objects)
+plt.ylabel('Number of commits')
+plt.title('The repositories')
+
+plt.show()
