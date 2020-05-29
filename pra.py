@@ -42,10 +42,10 @@ performance = [tc, tc2, tc3]
 
 plt.bar(y_pos, performance, align='center', alpha=0.5)
 plt.xticks(y_pos, objects)
-plt.ylabel('Number of commits')
-plt.xlabel('The repositories')
-plt.title('Total number of commits in each repository')
 
+plt.ylabel('Number of Commits')
+plt.xlabel('The Repositories')
+plt.title('Total Number of Commits in Each Repository')
 plt.show()
 
 # import ipdb; ipdb.set_trace()
