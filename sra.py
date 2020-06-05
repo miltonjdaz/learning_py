@@ -7,7 +7,7 @@ auth_token = os.environ.get('gh_token')
 # github object
 g = Github(auth_token)
 # This connects to the corresponding repository 
-repos_obj = g.get_repo('Runescape')
+repos_obj = g.get_repo('miltonjdaz/Runescape')
 import ipdb; ipdb.set_trace()
 
 """
