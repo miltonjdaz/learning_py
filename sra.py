@@ -10,6 +10,10 @@ g = Github(auth_token)
 repos_obj = g.get_repo('miltonjdaz/Runescape')
 clone = repos_obj.clone_url
 print(clone)
+
+des = repos_obj.description
+print = (des)
+
 import ipdb; ipdb.set_trace()
 
 """
