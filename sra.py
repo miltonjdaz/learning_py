@@ -17,4 +17,7 @@ print(des)
 contributor = repos_obj.get_contributors
 print(contributor)
 
+gsc = repos_obj.get_stats_contributors
+print(gsc)
+
 import ipdb; ipdb.set_trace()
