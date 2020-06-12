@@ -20,4 +20,9 @@ print(contributor)
 gsc = repos_obj.get_stats_contributors
 print(gsc)
 
+tc = repos_obj.get_commits()
+
+v = tc.totalCount
+
+print(v)
 import ipdb; ipdb.set_trace()
