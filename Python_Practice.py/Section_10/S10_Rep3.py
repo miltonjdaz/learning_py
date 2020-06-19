@@ -33,3 +33,16 @@ def updateScore(choice, msg, score, hits, misses):
         misses = misses + 1
     score.setText(tallyStr.format(hits,misses))
     return hits, misses
+
+def quitOrPlay(win, quit, again):
+    # Get a click in quit or again
+    # Returns True if again clicked, false for quit
+    quit.activate()
+    again.activate()
+    pt = win.getMouse()
+    while not (quit.clicked(pt) or again.clicked(pt)):
+        pt = win.getMouse()
+    ans = again.clicked(pt)
+    quit.deactivate()
+    again.deactivate()
+    return ans
