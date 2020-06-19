@@ -46,3 +46,35 @@ def quitOrPlay(win, quit, again):
     quit.deactivate()
     again.deactivate()
     return ans
+
+def main():
+    
+    # Set up interface 
+    win = GraphWin("Extended Three Button Monte", 350, 350)
+    win.setCoords(.5,-2, 3.5, 3)
+    b1 = Button(win, Point(1,2), .75, 1, "Door 1")
+    b1.activate()
+    b2 = Button(win, Point(2,2), .75, 1, "Door 2")
+    b2.activate()
+    b3 = Button(win, Point(3,2), .75, 1, "Door 3")
+    b3.activate()
+    again = Button(win, Point(1.25,0), 1, .75, "Play Again")
+    quit = Button(win, Point(2.75,0), 1, .75, "Quit")
+    mess = Text(Point(2,.75), "Guess a door")
+    mess.setStyle("bold")
+    mess.draw(win)
+    scoreBox = Text(Point(2,-1), "")
+    scoreBox.draw(win)
+
+    playAgain = True
+    hits = 0
+    misses = 0
+    while playAgain:
+        mess.setText("Guess a door")
+        pick = getDoorPick(win, b1, b2, b3)
+        hits, misses = updateScore(pick, mess, scoreBox, hits, misses)
+        playAgain = quitOrPlay(win, quit, again)
+    win.close()    
+
+if __name__ == '__main__':
+    main()
