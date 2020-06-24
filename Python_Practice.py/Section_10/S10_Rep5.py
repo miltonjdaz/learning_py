@@ -45,3 +45,20 @@ class Student:
 
     def gpa(self):
         return self.qpoints/self.hours
+
+def main():
+    print("This program computes a student's GPA")
+    student = Student("No Name", 0, 0)
+
+    infoStr = input("Enter course info (grade <space> credits): ")
+    while infoStr != "":
+        grade, credits = infoStr.split()
+        student.addLetterGrade(grade, float(credits))
+        infoStr = input("Enter course info (grade <space> credits): ")
+
+    print("\nSummary of courses entered:")
+    print("hours:", student.getHours())
+    print("GPA:", student.gpa())
+
+if __name__ == '__main__':
+    main()
