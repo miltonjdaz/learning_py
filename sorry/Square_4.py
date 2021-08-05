@@ -1,4 +1,4 @@
-"""def main():
+def main():
     day = int(input("Enter the day number: "))
     month = int(input("Enter the month number: "))
     year = int(input("Enter the year: "))
@@ -12,7 +12,7 @@
 
     print("The date is {0} or {1}.".format(date1, date2))
 
-main()"""
+main()
 
 def dos():
     phrase = input("Enter a phrase: ")
@@ -24,3 +24,10 @@ def dos():
     print("The acronym is", acronym)
 
 dos()
+
+def three():
+    score = int(input("Between 0 - 100, enter the score: "))
+    grades = 60*"F"+10*"D"+10*"C"+10*"B"+11*"A"
+    print("The grade is", grades[score])
+
+three()
