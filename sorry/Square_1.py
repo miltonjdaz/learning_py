@@ -12,3 +12,8 @@ def main():
         print(x)
 
 main()
+
+def dos():
+    print("Investigate more on API Spotify")
+
+dos()
