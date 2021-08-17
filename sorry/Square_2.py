@@ -29,3 +29,13 @@ def three():
     print("This is the distance in miles:", miles) 
 
 three()
+
+def quad():
+    print("This program computes the average of 3 scores.")
+
+    score1, score2, score3 = eval(input("Enter 3 scores separated by a comma: "))
+    average = (score1 + score2 + score3)/ 3.0
+
+    print("The average of the scores is:", average)
+
+quad()
