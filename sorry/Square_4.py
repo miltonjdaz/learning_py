@@ -31,3 +31,10 @@ def three():
     print("The grade is", grades[score])
 
 three()
+
+def quad():
+    letters = ["F", "D", "C", "B", "A"]
+    grade = int(input("What was the number grade (0-5): "))
+    print("The letter grade you got is:", letters[grade-1]+".")
+
+quad()
