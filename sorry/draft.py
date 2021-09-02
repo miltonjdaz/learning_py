@@ -101,3 +101,14 @@ if __name__ == "__main__":
         CONSTRAINT primary_key_constraint PRIMARY KEY (played_at)
     )
     """
+
+    cursor.execute(sql_query)
+    print("Opened database successfully")
+
+    try:
+        song_df.to_sql("my_played_tracks", engine, index=False, if_exists='append')
+    except:
+        print("Data already exists in the database")
+
+    conn.close()
+    print("Close database successfully")
