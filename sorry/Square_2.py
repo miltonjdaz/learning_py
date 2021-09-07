@@ -5,6 +5,13 @@ def main():
     fahrenheit = 9/5 * celsius + 32
     print("The temperature is", fahrenheit, "degrees Fahrenheit.")
     
+    print("The program converts temperatures from Fahrenheit to Celsius")
+    print()
+    
+    fahrenheit = eval(input("What is the Fahrenheit temperature? "))
+    celsius = 5.0 / 9.0 * (fahrenheit - 32)
+    print("The temperature is", celsius, "degrees Celsius")
+    
 main()
 
 def dos():
