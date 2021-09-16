@@ -1,4 +1,3 @@
-
 import pandas as pd
 from sqlalchemy import create_engine 
 import os
@@ -20,3 +19,13 @@ df1 = pd.DataFrame(query_one)
   
 # saving the dataframe 
 df1.to_csv('/home/milton/github/Runescape/results/results_q1.csv') 
+
+# 2nd query; results are the amount of rune hastas received per day
+
+query_two = pd.read_sql_query('SELECT COUNT(Rune_hasta) AS Rune_hasta, Day FROM rstable GROUP BY Day ORDER BY Day', engine)
+print(query_two)
+
+df2 = pd.DataFrame(query_two) 
+  
+# saving the dataframe 
+df2.to_csv('/home/milton/github/Runescape/results/results_q2.csv') 
