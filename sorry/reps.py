@@ -21,3 +21,15 @@ def tres():
     print("100         212.0")
 
 tres()
+
+def four():
+    principal = eval(input("Enter the principal: "))
+    apr = eval(input("Enter the annualized interest rate: "))
+    years = eval(input("Enter the number of years: "))
+
+    for i in range(years):
+        principal = principal * (1 + apr)
+
+    print("The amount in", years, "years is:", principal)
+
+four()
