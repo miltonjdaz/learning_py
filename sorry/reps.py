@@ -33,3 +33,16 @@ def four():
     print("The amount in", years, "years is:", principal)
 
 four()
+
+def five():
+    payment = eval(input("Enter amount to invest each year: "))
+    apr = eval(input("Enter the annualized interest rate: "))
+    years = eval(input("Enter the number of years: "))
+
+    principal = 0.0
+    for i in range(years):
+        principal = (principal + payment) * (1 + apr)
+
+    print("The amount in", years, "years is:", principal)
+
+five()
