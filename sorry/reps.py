@@ -59,3 +59,10 @@ def six():
     print("The amount in", years, "years is:", principal)
 
 six()
+
+def seven():
+    fahrenheit = eval(input("What is the Fahrenheit temperature: "))
+    celsius = 5.0 / 9.0 * (fahrenheit - 32)
+    print("The temperature is", celsius, "degrees Celsius")
+
+seven()
